@@ -62,6 +62,11 @@
             <h1 style="color: white;">GSMP World Map</h1>
             <iframe src="http://51.79.176.35:8123/" frameborder="0" width="1000px" height="450px"></iframe>
         </section>
+        {% if requestsent %}
+        <div id="requestnotif">
+            <h1>Request Sent</h1><img src="{% static 'smp/check.png' %}"><p>Your profile will appear on the members list once your request has been approved.</p>
+        </div>
+        {% endif %}
         <!-- PROXIMITY CHAT -->
         <section id="section-proximitychat" class="content_container">
             <div class="split-50">
@@ -134,11 +139,16 @@
             }
             var body = document;
             var except = document.getElementById('Application_Form');
+            var except2 = document.getElementById('requestnotif');
 
             body.addEventListener("click", function () {
                 document.getElementById('Application_Form').style.display = 'none';
+                document.getElementById('requestnotif').style.display = 'none';
             }, false);
             except.addEventListener("click", function (ev) {
+                ev.stopPropagation(); //this is important! If removed, you'll get both alerts
+            }, false);
+            except2.addEventListener("click", function (ev) {
                 ev.stopPropagation(); //this is important! If removed, you'll get both alerts
             }, false);
 
