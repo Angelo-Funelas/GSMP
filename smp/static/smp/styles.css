@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@900&display=swap');
+            html {
+                scroll-behavior: smooth;
+            }
+            /* width */
+            ::-webkit-scrollbar {
+            width: 10px;
+            }
+
+            /* Track */
+            ::-webkit-scrollbar-track {
+            background: rgba(0,0,0,0.2);
+            }
+
+            /* Handle */
+            ::-webkit-scrollbar-thumb {
+            background: #888;
+            }
+
+            /* Handle on hover */
+            ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+            }
+            body {
+                font-family: 'Titillium Web', sans-serif;
+                padding: 0px;
+                margin: 0px;
+            }
+            #navbar {
+                background-color: #130f40;
+                width: 100%;
+                color: white;
+                position: fixed;
+                padding: 5px;
+                padding-left: 20px;
+                font-size: 35px;
+                z-index: 1;
+            }
+            #navbar img {
+                width: 30px;
+            }
+            #navbar ul {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+                float: right;
+                padding-right: 25px;
+            }
+            #navbar li a {
+                display: block;
+                text-decoration: none;
+                background: white;
+                color: black;
+                padding: 4px;
+                margin: 4px;
+            }
+            #navbar li a:hover {
+                background: black;
+                color: white;
+            }
+            #navbar li {
+                float: left;
+                font-size: 20px;
+                display: inline;
+            }
+            .content_container {
+                width: 1200px;
+                height: 100%;
+                margin-top: 100px;
+                position: absolute;
+                margin-left: auto;
+                margin-right: auto;
+                left: 0;
+                right: 0;
+            }
+            .split-50 {
+                width: 50%;
+                height: 100%;
+                margin: 0px;
+                padding: 0px;
+                float: left;
+            }
+            h1 {
+                font-size: 50px;
+                color: #4b7bec;
+                line-height: 40px;
+            }
+            .split-50 .screenshot {
+                width:  550px;
+                margin-top: 150px;
+                box-shadow: 0px 0px 46px 0px rgba(0,0,0,0.75);
+                -webkit-box-shadow: 0px 0px 46px 0px rgba(0,0,0,0.75);
+                -moz-box-shadow: 0px 0px 46px 0px rgba(0,0,0,0.75);
+            }
+            p {
+                color: #30336b;
+                font-size: 22px;
+                line-height: 24px;
+            }
+            #worldmapsection {
+                background: #4b6584;
+                width: 100%;
+                height: 450px;
+                position: absolute;
+                margin-top: 700px;
+                text-align: center;
+            }
+            #section-proximitychat {
+                padding-top: 30px;
+                margin-top: 1370px;
+                height: 550px;
+            }
+            #section-serverdetails h3 {
+                background: white;
+            }
+            #section-players {
+                margin-top: 2300px;
+                width: 100%;
+                height: 360px;
+                text-align: center;
+            }
+            iframe {
+                box-shadow: 0px 0px 46px 0px rgba(0,0,0,0.75);
+                -webkit-box-shadow: 0px 0px 46px 0px rgba(0,0,0,0.75);
+                -moz-box-shadow: 0px 0px 46px 0px rgba(0,0,0,0.75);
+                background: black;
+            }
+            a {
+                text-decoration: none;
+            }
+            .screenshot {
+                animation: slidein .8s ease-out;
+            }
+            @keyframes slidein {
+                0% {opacity:0;transform:translateX(-60px)}
+                100% {opacity:1;transform:translateX(0px)}
+            }
+            .servermember img {
+                height: 60px;
+                position: absolute;
+            }
+            .servermember p {
+                margin-left: 65px;
+                line-height: 2px;
+                color: black;
+            }
+            .servermember h6 {
+                position: absolute;
+                margin-left: 65px;
+                color: white;
+                background: black;
+                transform: translateY(-35px);
+                max-width: 100px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            .button {
+                width: 220px;
+                height: 40px;
+                font-size: 20px;
+                margin-top: 40px;
+                background: #22a6b3;
+                text-align: center;
+                cursor: pointer;
+                border: none;
+                font-family: 'Titillium Web', sans-serif;
+            }
+            .button:hover {
+                background: #7ed6df;
+            }
+            #Application_Form {
+                position: fixed;
+                display: none;
+                margin-left: auto;
+                margin-right: auto;
+                left: 0;
+                right: 0;
+                background: white;
+                height: 550px;
+                width: 400px;
+                transform: translateY(50px);
+                padding: 25px;
+                box-shadow: 0px 0px 0px 2000px rgba(0,0,0,0.59);
+                -webkit-box-shadow: 0px 0px 0px 2000px rgba(0,0,0,0.59);
+                -moz-box-shadow: 0px 0px 0px 2000px rgba(0,0,0,0.59);
+                overflow-y: scroll;
+            }
+            #Application_Form form p {
+                line-height: 20px;
+                margin: 4px;
+                font-size: 18px;
+            }
+            #Application_Form form .button {
+                transform: translateY(-20px);
+            }

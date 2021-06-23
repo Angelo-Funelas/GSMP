@@ -1,0 +1,12 @@
+registration:
+- country
+- opening questions
+- mcusername
+- age
+- hobbies
+- describe yourself
+- disclaimer
+
+proximity chat:
+server details:
+players:
