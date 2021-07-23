@@ -4,14 +4,18 @@ from .forms import *
 # Create your views here.
 
 def index(request):
-    requestsent = ""
-    form = new_member(request.POST or None)
-    if form.is_valid():
-        form.save()
-        requestsent = True
-    return render(request, "smp/index.html", {
-        "members": Member.objects.filter(Approved=True),
-        "form": form,
-        "requestsent": requestsent
-    })
-    
+    if request.method == "POST":
+        form = new_member(request.POST or None)
+        if form.is_valid():
+            form.save()
+            return render(request, "smp/index.html", {
+                "members": Member.objects.all(),
+                "form": form,
+                "requestsent": True
+            })
+    else:
+        form = new_member()
+        return render(request, "smp/index.html", {
+            "members": Member.objects.all(),
+            "form": form
+        })

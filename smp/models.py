@@ -13,6 +13,7 @@ class Member(models.Model):
     Question2 = models.CharField(max_length=128)
     Question3 = models.CharField(max_length=128)
     Approved = models.BooleanField(default=False)
+    bg = models.CharField(max_length=32, default="netherrack")
 
 
     def __str__(self):

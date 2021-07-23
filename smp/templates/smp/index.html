@@ -1,112 +1,72 @@
 {% load static %}
-
 <!DOCTYPE html>
 <html>
     <head>
-        <meta property="og:title" content="Welcome to GSMP" />
-        <meta property="og:description" content="The GSMP is a vanilla surival multiplayer server. Our goal, to have fun, socialize, and create awesome builds that look cool 😎. The server can hold up to 10 (ten) players." />
-        <meta property="og:url" content="fello.pythonanywhere.com/smp" />
-        <meta property="og:image" content="{% static 'smp/preview.png' %}" />
-        <link rel="icon" href="{% static 'smp/server-icon.png' %}">
         <title>GSMP Server</title>
+        <link rel="stylesheet" href="{% static 'smp/style.css' %}">
     </head>
     <body>
-        <link rel="stylesheet" href="{% static 'smp/styles.css' %}">
-        <style>
-            #section-serverdetails {
-                margin-top: 2000px;
-                background-image: url({% static 'smp/stonebg.jpg' %});
-                width: 700px;
-                height: 260px;
-                text-align: center;
-                filter: drop-shadow(0px 0px 10px black);
-            }
-            .servermember {
-                display: inline-block;
-                padding: 10px;
-                width: 160px;
-                height: 80px;
-                text-align: left;
-                border-radius: 10px;
-                background-size: cover;
-                background-image: url({% static 'smp/stone.jpg' %});
-                margin: 10px;
-            }
-        </style>
-        <span id="navbar">
-            <a href="#section-landing" style="color: white;"><img src="{% static 'smp/server-icon.png' %}">GSMP</a>
-        <ul>
-            <li><a href="#worldmapsection">World Map</a></li>
-            <li><a href="#section-proximitychat">Proximity Chat</a></li>
-            <li><a href="#section-serverdetails">Server Details</a></li>
-            <li><a href="#section-players">Players & Registration</a></li>
-        </ul>
-        </span>
-        <section id="section-landing" class="content_container">
-            <div class="split-50">
-                <h1>Welcome to GSMP.</h1>
-                <p>The GSMP is a vanilla surival multiplayer server. Our goal, to have fun, socialize, and create awesome builds that look cool 😎. The server can hold up to 10 players.</p>
-                <h3>Rules:</h3>
-                <ul>
-                    <li>No Hacking/X-ray.</li>
-                    <li>As much as possible, limit griefing.</li>
-                    <li>Be friendly! We don't like toxic people in our server.</li>
-                    <li>Be 16+ years old.</li>
-                </ul>
-            </div>
-            <div class="split-50">
-                <img src="{% static 'smp/screenshot1.gif' %}" class="screenshot">
-            </div>
-        </section>
-        <section id="worldmapsection">
-            <h1 style="color: white;">GSMP World Map</h1>
-            <iframe src="http://51.79.176.35:8123/" frameborder="0" width="1000px" height="450px"></iframe>
-        </section>
-        {% if requestsent %}
-        <div id="requestnotif">
-            <h1>Request Sent</h1><img src="{% static 'smp/check.png' %}"><p>Your profile will appear on the members list once your request has been approved.</p>
-        </div>
-        {% endif %}
-        <!-- PROXIMITY CHAT -->
-        <section id="section-proximitychat" class="content_container">
-            <div class="split-50">
-                <img src="{% static 'smp/screenshot2.gif' %}" class="screenshot">
-            </div>
-            <div class="split-50">
-                <h1>We have a built-in Proximity Chat</h1>
-                <p>Our server uses "Simple Voice Chat" to let players talk in-game without a use of a 3rd party software. All you need is to have "Simple Voice Chat" installed on your client.</p>
-                <p>If you have no idea how to install mods, then Google is your best friend</p>
-                <h3>Recommended Mods (Fabric):</h3>
-                <ol>
-                   <li><a target="_blank" href="https://www.curseforge.com/minecraft/mc-mods/simple-voice-chat/">Simple Voice Chat</a></li>
-                   <li><a target="_blank" href="https://www.curseforge.com/minecraft/mc-mods/fabric-api">FabricAPI (Simple Voice Chat requires this mod to function)</a></li> 
-                   <li><a target="_blank" href="https://optifine.net/downloads">Optifine</a></li> 
-                   <li><a target="_blank" href="https://www.curseforge.com/minecraft/mc-mods/optifabric">OptiFabric (Since Optifine isn't compatible with fabric out of the box, you'll need this mod to make it work with fabric)</a></li> 
-                   <li><a target="_blank" href="https://www.curseforge.com/minecraft/mc-mods/phosphor">Phosphor (This is purely for performance, not required)</a></li> 
-                </ol>
-            </div>
-        </section>
-        <!-- SERVER DETAILS -->
-        <section id="section-serverdetails" class="content_container">
-            <h1>Server Details</h1>
-            <h3>IP: 51.79.176.35:12684</h3>
-            <h3>Server Location: Singapore</h3>
-        </section>
-        <section id="section-players" class="content_container">
-            <h1 style="line-height: 10px;"">Server Members</h1>
-            <p style="line-height: 0px;">Request to be a member to be whitelisted on the server.</p>
-            <br>
-            {% for member in members %}
-                <div class="servermember">
-                    <img data-username="{{member.Username}}">
-                    <p>{{member.Username}}</p>
-                    <h6>{{member.Description}}</h6>
-
+        <div class="parallax"></div>
+        <div id="container">
+            <section id="main">
+                <h1>GSMP Server</h1>
+                <p>The GSMP is a vanilla 1.16.5 surival multiplayer server. Our goal, to have fun, socialize, and create awesome builds that look cool 😎. The server can hold up to 10 players.</p>
+                
+                <div id="server-details">
+                    <h1>Server Details</h1>
+                    <p>IP: 51.79.176.35:12684<br>
+                    Game Version: 1.16.5<br>
+                    Server Location: Singapore</p>
                 </div>
-            {% endfor %}
-            <br>
-            <button class="button" onclick="setTimeout(function(){document.getElementById('Application_Form').style.display = 'block'}, 1)">Send Member Request</button>
-        </section>
+            </section>
+            <section id="players">
+                <h1>Players</h1>
+                <button class="btn" onclick="setTimeout(function(){document.getElementById('Application_Form').style.display = 'block'}, 1)">Join now</button>
+                {% for member in members %}
+                    <div class="server_player" style="background-image: url('/static/smp/{{member.bg}}.png');
+                        {% if member.Approved == False %}
+                            background: gray;
+                        {% endif %}"
+                    >   
+                        <img src="https://mc-heads.net/body/{{member.Username}}" style="
+                            {% if member.Approved == False %}
+                                filter: brightness(0);
+                            {% endif %}
+                        ">
+                        <div class="overlay">
+                            {% if member.Approved == False %}
+                                PENDING APPROVAL <br><img src="{% static 'smp/loading.gif' %}" style="width:  50px; height: 50px; filter:grayscale(0);"><br>{{member.Username}}
+                            {% else %}
+                                {{member.Description}} <br> - {{member.Username}}
+                            {% endif %}
+                        </div>
+                    </div>
+                {% endfor %}
+            </section>
+            <section id="map">
+                <h1>World Map</h1>
+                <span class="important-note">(Updates every hour)</span>
+                <iframe src="http://51.79.176.35:8123/" frameborder="0"></iframe>
+            </section>
+            <section id="mods">
+                <h1>Client-side Mods (Optional)</h1>
+                <p>Our server uses "Simple Voice Chat" to let players talk in-game without a use of a 3rd party software. All you need is to have "Simple Voice Chat" installed on your client.
+
+                    If you have no idea how to install mods, then Google is your best friend. You can download fabric installer <a href="https://fabricmc.net/use/">here</a>.</p>
+                <span class="important-note">NOTE: You can join the server with the normal client, but you wont be able to use proximity chat</span>
+                <ul id="mods-list">
+                    <a target="_blank" href="https://www.curseforge.com/minecraft/mc-mods/simple-voice-chat/"><li>Simple Voice Chat (FabricAPI required.)<br><img src="{% static 'smp/simplevoicechat.png' %}"></li></a>
+                    <a target="_blank" href="https://www.curseforge.com/minecraft/mc-mods/fabric-api"><li>FabricAPI<br>(API)<br><img src="{% static 'smp/fabricapi.png' %}"></li></a>
+                    <a target="_blank" href="https://www.curseforge.com/minecraft/mc-mods/optifabric"><li>OptiFabric (Optifine required.)<br><img src="{% static 'smp/optifabric.png' %}"></li></a>
+                    <a target="_blank" href="https://optifine.net/downloads"><li>Optifine<br>(Performance)<br><img src="{% static 'smp/optifine.jpg' %}"></li></a>
+                    <a target="_blank" href="https://www.curseforge.com/minecraft/mc-mods/phosphor"><li>Phosphor (Performance)<br><img src="{% static 'smp/phosphor.jpg' %}"></li></a>
+                 </ul>
+            </section>
+        </div>
+        <footer class="footer">
+            <h3>Privacy Policy</h3>
+            <p>Website written and maintained by GeloFunz</p>
+        </footer>
         <div id="Application_Form">
             Application Form
             <form method="POST"> {%csrf_token%}
@@ -124,19 +84,18 @@
                 {{form.Question1}}
                 <p>How often will you be on the server?</p>
                 {{form.Question2}}
-                <p>You like shows? name every show 🙄.</p>
+                <p>Extra remarks.</p>
                 {{form.Question3}}
-                <p style="background: red; color: white; padding: 10px; font-size: 16px;">IMPORTANT: Please do not hack, the goal of this server is to meet new people and have fun, please don't be that guy.</p>
-                <input type="submit" class="button" value="Send Request">
+                <span class="important-application-note">IMPORTANT: Please do not hack, the goal of this server is to meet new people and have fun, please don't be that guy.</span>
+                <input type="submit" class="btn" value="Send Request">
             </form>
         </div>
+        {% if requestsent %}
+        <div id="requestnotif">
+            <h1>Request Sent</h1><img src="{% static 'smp/check.png' %}"><p>Your profile will appear on the members list once your request has been approved.</p>
+        </div>
+        {% endif %}
         <script>
-            var servermembers = document.getElementsByClassName('servermember');
-            for(var i = 0; i < servermembers.length ; i++) {
-                var profilepic = servermembers[i].getElementsByTagName('img')[0];
-                console.log(profilepic)
-                profilepic.src = `https://mc-heads.net/avatar/${profilepic.dataset.username}`;
-            }
             var body = document;
             var except = document.getElementById('Application_Form');
             var except2 = document.getElementById('requestnotif');
@@ -152,6 +111,9 @@
                 ev.stopPropagation(); //this is important! If removed, you'll get both alerts
             }, false);
 
+            if ( window.history.replaceState ) {
+                window.history.replaceState( null, null, window.location.href );
+            }
         </script>
     </body>
 </html>
