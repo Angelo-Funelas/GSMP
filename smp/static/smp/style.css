@@ -39,7 +39,7 @@ section p {
 #players {
     text-align: center;
     line-height: 40px;
-    background-image: url('netherart.png');
+    background-image: url('splashart.png');
     background-size: cover;
     color: white;
     transition: all .2s;
